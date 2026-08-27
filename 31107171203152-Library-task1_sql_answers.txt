@@ -1,0 +1,80 @@
+Task 1: Data Gathering and Combination
+
+Task 1 has two main goals.
+
+First, we need to answer five business questions about the library's members and checkouts by querying the library database directly.
+
+Second, we need to combine the three provided data sources into one unified dataset that will be used in the later tasks.
+
+The three starting sources are:
+- The library database (.db), which contains members and checkouts linked to their accounts.
+- The book catalog (.json), which contains information about the books owned by the library.
+- The Reading Kickoff signups (.html), which contains checkout records from the summer event.
+
+Step 1 — Understand the database
+
+Before answering the questions, we inspect the database and understand the members, books, and checkouts tables and how their records are related.
+
+This step is important because understanding the relationships between the tables helps us write correct queries and avoid incorrect results.
+
+Step 2 — Answer the five business questions
+
+The first question asks how much each member is borrowing. The result should give a checkout count for each member, including members who have not borrowed anything.
+
+The second question asks which books match a chosen author pattern. We search the book catalog using a letter or pattern that we choose and record.
+
+The third question asks for the five most popular books. We count how many times each title was checked out and rank the titles from most borrowed to least borrowed.
+
+The fourth question asks for the ten most active readers. We identify the ten members who have borrowed the most books and rank them from highest to lowest.
+
+The fifth question asks about older activity in one neighborhood. We choose a neighborhood and list its checkouts from newest to oldest, looking beyond the ten most recent records.
+
+Step 3 — Combine Members and Checkouts
+
+The first combination stage links every checkout to the member who actually made it.
+
+No checkout should be lost, and no checkout should be connected to the wrong member.
+
+The combined result should also allow us to see how many books each member has borrowed in total.
+
+This stage is expected to be completed using Python alone, without a separate query tool.
+
+Step 4 — Add Book Details
+
+Next, the book catalog is added to the checkout data.
+
+Each checkout should receive the correct information about the book it refers to. No checkout should lose its book information or receive information belonging to a different book.
+
+At this stage, the number of checkout records should not change because we are adding information rather than adding or removing checkout records.
+
+Step 5 — Add Reading Kickoff Checkouts
+
+Finally, the Reading Kickoff checkout records from the web page are added to the combined dataset.
+
+Every checkout listed on the Reading Kickoff page needs to appear in the final result and should contain the same type of information as the database checkouts.
+
+This allows both groups of checkouts to be stored together as one unified dataset instead of two different formats.
+
+Step 6 — Check the Combined Dataset
+
+Before saving the final dataset, we check:
+- the number of records;
+- the columns in the dataset;
+- a sample of the rows.
+
+This verification helps make sure that the combination process did not lose records or attach incorrect information.
+
+Step 7 — Web Page vs. API
+
+The Reading Kickoff source is a web page, which is designed for people to read in a browser. An API, in contrast, is designed to provide structured data directly to programs.
+
+Because the Reading Kickoff information comes from a web page, it requires a different approach from the database data. The important point is to extract the information and transform it so that it can fit correctly with the database checkouts.
+
+Final Task 1 Result
+
+At the end of Task 1, we should have:
+1. A unified combined dataset containing the information from the three sources.
+2. A text file containing the five business questions, their reasoning, and their results.
+3. A short reflection explaining the difference between the web page source and the database/API-style source and why that difference mattered in this project.
+
+The combined dataset produced by Task 1 becomes the input for Task 2, so it is important that the records and relationships are correct before moving forward.
